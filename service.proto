@@ -1,0 +1,58 @@
+syntax = "proto3";
+option  go_package = "hw5/service";
+
+service Communication {
+  rpc InitPlayer (Request) returns (ResponseInit) {}
+  rpc StartGame(Empty) returns (HowMany) {}
+  rpc EndDay(Empty) returns (HowMany) {}
+  rpc CheckHowManyPeopleIsNotSleep(Empty) returns (HowMany) {}
+  rpc CheckHowManyPeopleIsSleep(Empty) returns (HowMany) {}
+  rpc ListOfPlayers (Empty) returns (ResponseListOfPlayers) {}
+  rpc CountAlivePeople (Empty) returns (HowMany) {}
+  rpc EndNight (HowMany) returns (HowMany) {}
+  rpc CommissionerCheck (Request) returns (Request) {}
+  rpc MafiaKill (Request) returns (Request) {}
+  rpc CheckDeadAfterNight (Empty) returns (Request) {}
+  rpc Vote (Votion) returns (Request) {}
+  rpc CountVote (Empty) returns (HowMany) {}
+  rpc SayHwoIsMafia (Empty) returns (Empty) {}
+  rpc Update (Request) returns (Request) {}
+  rpc KillAfterVote (Empty) returns (Request) {}
+  rpc EndGame (Empty) returns (Request) {}
+  rpc CheckWhoMafia (Empty) returns (Request) {}
+  rpc DeadVote (Empty) returns (Empty) {}
+
+}
+
+//message RequestName {
+//  string name = 1;
+//}
+
+message Empty {
+
+}
+
+message Votion {
+  string name = 1;
+  int32 people = 2;
+}
+
+message HowMany {
+  int32 people = 1;
+}
+
+message Request {
+  string name = 1;
+}
+
+message ResponseInit {
+  string msg = 1;
+  string name = 2;
+  string role = 3;
+}
+
+message ResponseListOfPlayers {
+  map<string, string> members = 1;
+}
+
+
