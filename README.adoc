@@ -13,3 +13,6 @@
 1) Из текущей папки запустить main (`go run main.go`) и client (`./client` - бинарный файл)
 2)Из папки Chat (`cd Chat`) запустить клиента и сервер (`Python3 server.py && Python3 client.py`)
 
+== REST API ==
+
+все лежит в папке rest, все сделано согласно шаблону
